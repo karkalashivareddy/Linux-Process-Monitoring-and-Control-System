@@ -11,9 +11,11 @@
 | Karkala Shiva Reddy | 2520030105 |
 | Dakur Manoj Kumar | 2520030040 |
 
-## Project Directory
+## Project Overview
 
-This project is maintained under the `ForgeOS` directory of the `Creaters_Shell_OSSP` repository.
+The Linux Process Monitoring and Control System is a Linux-based system programming project designed to monitor and control running processes through a terminal-based interface.
+
+The project demonstrates practical Operating Systems and Linux/POSIX system-programming concepts using the /proc filesystem, Linux system calls, file I/O, file descriptors, process management, and Linux signals.
 
 ## Project Scope
 
@@ -31,17 +33,17 @@ The system will provide a terminal-based interface to:
 
 The implementation will demonstrate:
 
-- Linux `/proc` filesystem
+- Linux /proc filesystem
 - POSIX/Linux file and directory interfaces
 - File descriptors
 - File I/O
 - Linux system calls
 - Process management
 - Linux signals
-- `SIGSTOP`
-- `SIGCONT`
-- `SIGTERM`
-- `SIGKILL`
+- SIGSTOP
+- SIGCONT
+- SIGTERM
+- SIGKILL
 
 ## Development Tools
 
@@ -56,10 +58,11 @@ The implementation will demonstrate:
 
 ## Documentation
 
-- `PROJECT_TITLE.md` — Project title and team information
-- `docs/OSSP_Abstract.md` — Project abstract and required academic sections
-- `docs/TEAM_CONTRIBUTIONS.md` — Individual and shared team responsibilities
+- README.md — Project overview, technologies, and scope
+- PROJECT_ABSTRACT.md — Project abstract, problem statement, objectives, tools, and expected outcome
 
 ## Project Status
 
-Project title and required abstract documentation have been prepared according to the OSSP project requirements. Implementation, testing, screenshots, and final demonstration will be added during subsequent development stages.
+The project documentation and abstract have been prepared according to the OSSP project requirements.
+
+Implementation, testing, screenshots, documentation updates, and final demonstration will be added during subsequent development stages.
