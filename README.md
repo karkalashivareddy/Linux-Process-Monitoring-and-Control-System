@@ -1,160 +1,194 @@
-﻿# \# Linux Process Monitoring and Control System
+﻿# Linux Process Monitoring and Control System
 
-# 
+> **Operating Systems & System Programming (OSSP) Project**
 
-# \## OSSP Project
+**Team No.: 12**
 
-# 
+## Team Members
 
-# \*\*Project Title:\*\* Linux Process Monitoring and Control System
+| Roll No.   | Name                |
+| ---------- | ------------------- |
+| 2520030105 | Karkala Shiva Reddy |
+| 2520030040 | Dakur Manoj Kumar   |
 
-# \*\*Team No.:\*\* 12
+---
 
-# 
+## 1. Project Overview
 
-# \## Team Members
+The **Linux Process Monitoring and Control System** is a Linux-based system programming project developed to provide a structured command-line interface for monitoring and controlling running processes.
 
-# 
+The project demonstrates core Operating Systems concepts by interacting with the Linux `/proc` filesystem, Linux/POSIX interfaces, system calls, file descriptors, file I/O, process management mechanisms, and signals.
 
-# | Name                | Roll Number |
+The system is designed to retrieve relevant information about running processes and provide controlled process-management operations using their Process IDs (PIDs).
 
-# | ------------------- | ----------- |
+---
 
-# | Karkala Shiva Reddy | 2520030105  |
+## 2. Objectives
 
-# | Dakur Manoj Kumar   | 2520030040  |
+The primary objectives of the project are to:
 
-# 
+* Monitor running processes in a Linux environment.
+* Retrieve and display process information using the `/proc` filesystem.
+* Inspect individual processes using their PIDs.
+* Demonstrate Linux file I/O and file-descriptor usage.
+* Pause and resume processes using Linux signals.
+* Gracefully terminate processes when appropriate.
+* Forcefully terminate processes when required.
+* Demonstrate practical Linux/POSIX system-programming concepts.
+* Analyze system behavior using debugging and system-call tracing tools.
 
-# \## Abstract
+---
 
-# 
+## 3. Core Functionality
 
-# The \*\*Linux Process Monitoring and Control System\*\* is a Linux-based system programming project designed to monitor and control running processes through a terminal-based interface.
+The system is designed to support the following operations:
 
-# 
+### Process Monitoring
 
-# The system focuses on practical Operating Systems and Linux/POSIX system-programming concepts. It retrieves process information from the Linux `/proc` filesystem and provides controlled process-management operations using Linux signals and system calls.
+* List running processes.
+* Display process IDs (PIDs).
+* Display process names and states.
+* Display parent process information.
+* Retrieve CPU-related information.
+* Retrieve memory-related information.
 
-# 
+### Process Control
 
-# Users can list running processes, inspect a selected process using its Process ID (PID), and perform operations such as pausing, resuming, graceful termination, and forceful termination. The project demonstrates process management, file I/O, file descriptors, Linux system calls, and signals including `SIGSTOP`, `SIGCONT`, `SIGTERM`, and `SIGKILL`.
+Processes can be selected using their PID and controlled through appropriate Linux signals:
 
-# 
+| Operation            | Signal    | Purpose                                 |
+| -------------------- | --------- | --------------------------------------- |
+| Pause                | `SIGSTOP` | Suspends process execution              |
+| Resume               | `SIGCONT` | Continues a stopped process             |
+| Graceful Termination | `SIGTERM` | Requests controlled process termination |
+| Forceful Termination | `SIGKILL` | Immediately terminates a process        |
 
-# The project is implemented in \*\*C\*\* and developed and tested in an \*\*Ubuntu/Linux\*\* environment. Tools including GCC, GNU Make, GDB, and strace are used for compilation, debugging, and system-call analysis.
+---
 
-# 
+## 4. Operating Systems Concepts
 
-# \## Problem Statement
+The project provides practical implementation and demonstration of:
 
-# 
+* Process management
+* Process identification using PIDs
+* Process states
+* Parent-child process relationships
+* Linux `/proc` filesystem
+* File descriptors
+* File input/output
+* Linux/POSIX system calls
+* Linux signals
+* Permission and error handling
+* System-call tracing
+* Debugging of system-level programs
 
-# Linux systems may run many processes simultaneously, making it difficult to monitor process information and perform process-control operations efficiently. This project addresses the problem by providing a structured command-line system for monitoring processes and performing controlled process-management operations using the `/proc` filesystem, Linux/POSIX interfaces, system calls, and signals.
+---
 
-# 
+## 5. Technology Stack
 
-# \## Objectives
+### Programming
 
-# 
+* **C Programming Language**
 
-# \* Monitor and display information about running Linux processes.
+### Operating Environment
 
-# \* Retrieve process information through the Linux `/proc` filesystem.
+* **Ubuntu/Linux**
 
-# \* Inspect a selected process using its PID.
+### Build & Compilation
 
-# \* Pause and resume processes using `SIGSTOP` and `SIGCONT`.
+* **GCC**
+* **GNU Make**
 
-# \* Gracefully terminate processes using `SIGTERM`.
+### Development & Debugging
 
-# \* Forcefully terminate processes using `SIGKILL`.
+* **Visual Studio Code**
+* **GDB**
+* **strace**
 
-# \* Demonstrate practical Linux/POSIX system-programming concepts.
+### Version Control
 
-# \* Use debugging and system-call analysis tools to test and understand system behavior.
+* **Git**
+* **GitHub**
 
-# 
+---
 
-# \## Linux/POSIX Concepts
+## 6. System Architecture
 
-# 
+The project follows a simple command-line system-programming architecture:
 
-# \* `/proc` filesystem
+```text
+User
+ │
+ ▼
+Command-Line Interface
+ │
+ ├── Process Discovery
+ │      │
+ │      └── Linux /proc Filesystem
+ │
+ ├── Process Inspection
+ │      │
+ │      └── Process Information
+ │
+ └── Process Control
+        │
+        └── Linux Signals
+             ├── SIGSTOP
+             ├── SIGCONT
+             ├── SIGTERM
+             └── SIGKILL
+```
 
-# \* Process management
+The `/proc` filesystem provides process information, while Linux/POSIX interfaces and signals provide the mechanisms required for process interaction and control.
 
-# \* File descriptors
+---
 
-# \* File I/O
+## 7. Development Approach
 
-# \* Linux/POSIX system calls
+The project development follows these stages:
 
-# \* Linux signals
+1. Design the command-line interface.
+2. Identify and enumerate running processes.
+3. Read relevant process information from `/proc`.
+4. Display process information in a structured format.
+5. Implement PID-based process selection.
+6. Implement process-control operations using Linux signals.
+7. Add appropriate error and permission handling.
+8. Compile and test the application on Ubuntu/Linux.
+9. Debug the implementation using GDB.
+10. Analyze system calls using strace.
+11. Document implementation details and testing results.
 
-# \* Process states and PIDs
+---
 
-# \* `SIGSTOP`
+## 8. Project Documentation
 
-# \* `SIGCONT`
+| File            | Description                                                               |
+| --------------- | ------------------------------------------------------------------------- |
+| `README.md`     | Project overview, architecture, technologies, and development information |
+| `ABSTRACT.docx` | Official OSSP Team 12 project abstract                                    |
 
-# \* `SIGTERM`
+---
 
-# \* `SIGKILL`
+## 9. Expected Outcome
 
-# 
+The expected outcome is a functional command-line application capable of monitoring Linux processes and performing controlled process-management operations.
 
-# \## Technologies and Tools
+The completed project will demonstrate practical understanding of Operating Systems and Linux system programming through direct interaction with the `/proc` filesystem, Linux/POSIX interfaces, file I/O, system calls, process management, and signals.
 
-# 
+The project will also be supported by source code, testing evidence, documentation, screenshots, and demonstration results as development progresses.
 
-# \* Ubuntu/Linux
+---
 
-# \* C Programming Language
+## 10. Project Status
 
-# \* GCC Compiler
+**Current Status:** Project documentation and OSSP abstract prepared.
 
-# \* GNU Make
+The implementation, testing, screenshots, performance observations, and final demonstration materials will be incorporated as the project progresses.
 
-# \* Visual Studio Code
+---
 
-# \* GDB
+## 11. Repository
 
-# \* strace
-
-# \* Git
-
-# \* GitHub
-
-# 
-
-# \## Project Structure
-
-# 
-
-# \* `ABSTRACT.docx` — Official Team 12 OSSP abstract form
-
-# \* `README.md` — Project overview and documentation
-
-# 
-
-# \## Expected Outcome
-
-# 
-
-# The expected outcome is a functional command-line Linux process monitoring and control system that can retrieve information about running processes through `/proc` and provide controlled process-management operations using Linux signals and system calls.
-
-# 
-
-# The project will demonstrate practical understanding of Operating Systems, Linux/POSIX interfaces, process management, file I/O, file descriptors, signals, debugging, and system-call analysis.
-
-# 
-
-# \## Project Repository
-
-# 
-
-# GitHub: https://github.com/karkalashivareddy/Linux-Process-Monitoring-and-Control-System
-
-
-
+**GitHub Repository:**
+https://github.com/karkalashivareddy/Linux-Process-Monitoring-and-Control-System
