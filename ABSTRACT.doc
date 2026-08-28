@@ -1,0 +1,117 @@
+﻿<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<style>
+    body { font-family: Arial, sans-serif; font-size: 11pt; line-height: 1.4; }
+    table { border-collapse: collapse; width: 100%; margin-top: 5px; margin-bottom: 15px; }
+    th, td { border: 1px solid black; padding: 6px; text-align: left; vertical-align: top; }
+    .header-text { text-align: center; }
+    .bold { font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="header-text">
+    <h2 style="color: #990000; margin-bottom: 0;">Koneru Lakshmaiah Education Foundation</h2>
+    <p style="margin-top: 5px;">(Deemed to be University estd. u/s. 3 of the UGC Act, 1956)<br>
+    Off-Campus: Bachupally-Gandimaisamma Road, Bowrampet, Hyderabad, Telangana - 500 043.<br>
+    Phone No: 7815926816, www.klh.edu.in</p>
+    
+    <p class="bold">OPERATING SYSTEMS AND SYSTEMS PROGRAMMING (25CS2104E)<br>
+    2026–27, Term-I<br>
+    Project Problem Statement Submission Form</p>
+</div>
+
+<p class="bold" style="text-decoration: underline;">Section / Team Details</p>
+<p><b>Section No.:</b> sec-3<br>
+<b>Team No.:</b> 12<br>
+<b>Project Title:</b> Command Argument Passing System</p>
+
+<p class="bold" style="text-decoration: underline;">Team Members</p>
+<table>
+    <tr><th>Roll Number</th><th>Student Name</th><th>Signature</th></tr>
+    <tr><td>2520030105</td><td>Karkala Shiva Reddy</td><td></td></tr>
+    <tr><td>2520030040</td><td>Dakur Manoj Kumar</td><td></td></tr>
+</table>
+
+<p class="bold">1. Abstract</p>
+<p>Command-line applications often need to execute distinct programs while accurately passing user-provided arguments. This project aims to build a C-based utility in a Linux/UNIX environment that demonstrates fundamental process management and inter-process execution. The system resolves this by utilizing core POSIX system calls to parse inputs, transfer arguments, and synchronize execution. The project focuses on OS concepts such as process creation (fork()), program execution (execvp()), and parent-child synchronization (wait()/waitpid()). The proposed system will prompt the user for a command and arguments, spawn a child process, execute the requested program with the passed arguments, display the received arguments, and ensure the parent process waits for the child's completion before resuming. The expected outcome is a functional, interactive terminal application that effectively models program execution flows and handles invalid commands gracefully.</p>
+
+<p class="bold">2. Problem Statement</p>
+<p>A command-line application needs to execute different programs while passing user-provided arguments to them. The system must correctly transfer the command and its arguments from the parent application to the newly executed program. A system-programming solution is required to demonstrate how processes receive command-line arguments and how a new program can be executed seamlessly without terminating the parent application prematurely.</p>
+
+<p class="bold">3. Objectives</p>
+<ul>
+    <li>To build a system that accepts a command and multiple arguments from the user.</li>
+    <li>To create a child process using the fork() system call.</li>
+    <li>To pass dynamic arguments to the child process and execute the requested program using the exec() family of functions (e.g., execvp()).</li>
+    <li>To display the arguments received by the new program upon execution.</li>
+    <li>To synchronize the parent and child processes using wait() or waitpid().</li>
+    <li>To handle invalid commands and argument errors gracefully.</li>
+</ul>
+
+<p class="bold">4. Proposed Methodology</p>
+<ul>
+    <li>The project will be developed in C Programming Language and executed in an Ubuntu/Linux environment.</li>
+    <li>The system will utilize a loop to continuously prompt the user for input.</li>
+    <li>User input will be parsed into an array of strings representing the command and its arguments.</li>
+    <li>The fork() system call will be utilized to spawn a child process.</li>
+    <li>Within the child process, execvp() will be called to replace the child's memory space with the new program, passing the parsed argument array.</li>
+    <li>The parent process will invoke wait() or waitpid() to suspend its execution until the child process terminates, ensuring synchronization.</li>
+    <li>The system will display appropriate error messages for invalid commands or execution failures.</li>
+</ul>
+
+<p class="bold">5. Operating Systems Concepts / Linux APIs Used</p>
+<table>
+    <tr><th>OS Concept / System Call</th><th>Purpose in the Project</th></tr>
+    <tr><td>fork()</td><td>Create a child process to run the new command.</td></tr>
+    <tr><td>execvp()</td><td>Execute the requested program and pass the argument list.</td></tr>
+    <tr><td>wait() / waitpid()</td><td>Synchronize the parent process to wait for the child's completion.</td></tr>
+    <tr><td>Process Management</td><td>Handling process creation, execution, and termination states.</td></tr>
+    <tr><td>String Manipulation</td><td>Parsing raw terminal input into argument arrays.</td></tr>
+</table>
+
+<p class="bold">6. Individual Contribution</p>
+<table>
+    <tr><th>Roll Number</th><th>Student Name</th><th>Individual Responsibility</th></tr>
+    <tr><td>2520030105</td><td>Karkala Shiva Reddy</td><td>Implement input reading and string parsing logic; manage process creation using fork(); setup the GitHub repository.</td></tr>
+    <tr><td>2520030040</td><td>Dakur Manoj Kumar</td><td>Implement process execution using execvp(); handle parent-child synchronization with wait(); design error handling for invalid commands.</td></tr>
+</table>
+
+<p class="bold">7. Tools / Platforms / Software Used</p>
+<table>
+    <tr><th>Tool / Platform / Software</th><th>Purpose</th></tr>
+    <tr><td>Linux / Ubuntu</td><td>Run and test the command argument passing system.</td></tr>
+    <tr><td>C programming language</td><td>Develop the system and Linux/POSIX interfaces.</td></tr>
+    <tr><td>GCC compiler</td><td>Compile the C program.</td></tr>
+    <tr><td>Visual Studio Code</td><td>Write, organize, and edit the project source code.</td></tr>
+    <tr><td>Git and GitHub</td><td>Version control and project source-code management.</td></tr>
+</table>
+
+<p class="bold">8. Expected Outcome</p>
+<ul>
+    <li>The system will allow users to input dynamic commands and multiple arguments.</li>
+    <li>The system will successfully spawn child processes to handle executions without crashing the parent.</li>
+    <li>The system will accurately pass and display arguments to the executing program.</li>
+    <li>The project will provide a practical understanding of fundamental OS process lifecycles, execution handoffs, and process synchronization.</li>
+</ul>
+
+<p class="bold">9. GitHub Repository</p>
+<p><b>GitHub Repository Link:</b> https://github.com/karkalashivareddy/Command-Argument-Passing-System<br>
+<b>Repository Created:</b> Command-Argument-Passing-System<br>
+[X] Yes &nbsp;&nbsp;&nbsp;&nbsp; [ ] No</p>
+
+<hr style="margin-top: 30px; margin-bottom: 30px;">
+
+<p class="bold">Faculty Name and Signature</p>
+<p><b>Faculty Name:</b> K HEMA<br>
+<b>Signature:</b> ______________________________________________________________<br>
+<b>Remarks:</b> ______________________________________________________________________</p>
+
+<p class="bold" style="margin-top: 30px;">Faculty Use</p>
+<p><b>Project Approved:</b> [ ] Yes &nbsp;&nbsp;&nbsp;&nbsp; [ ] No<br>
+<b>Date:</b> _________________________________________________________________<br>
+<b>Faculty Signature:</b> _____________________________________________</p>
+
+</body>
+</html>
